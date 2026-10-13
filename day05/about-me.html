@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>누피코딩</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>누피코딩</h1>
+      <nav class="nav">
+        <span class="logo">누피코딩</span>
+        <ul class="menu">
+          <li><a href="#intro">소개</a></li>
+          <li><a href="#work">작업</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="intro">
+        <h2>소개</h2>
+        <p class="lead">웹 개발을 배우고 있습니다. 만드는 것을 좋아합니다.</p>
+        <img src="스누피.jpg" alt=" 누피의 프로필 사진">
+      </section>
+
+      <section id="work">
+        <h2>작업</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>개인 소개 페이지</h3>
+            <p>HTML만으로 만든 첫 페이지입니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>회원가입 폼</h3>
+            <p>입력 요소와 기본 검증을 연습했습니다.</p>
+          </article>
+
+          <article class="card">
+            <h3>시맨틱 구조 정리</h3>
+            <p>검색엔진과 화면낭독기를 고려했습니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>연락처</h2>
+
+        <form action="/contact" method="post">
+          <fieldset>
+            <legend>문의 남기기</legend>
+
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="message">내용</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit">보내기</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>2026 누피코딩</p>
+    </footer>
+  </body>
+</html>

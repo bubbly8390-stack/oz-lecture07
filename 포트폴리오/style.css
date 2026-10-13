@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 50px;
+    background-color: #f8f6f2;
+    color: #252525;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* 상단 메뉴 */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    margin-bottom: 70px;
+    border-bottom: 1px solid #ded9d2;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #76558f;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a {
+    color: #555;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.menu a:hover {
+    color: #8d67a7;
+}
+
+/* 첫 화면 */
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    min-height: 520px;
+    padding-bottom: 80px;
+}
+
+.intro-photo {
+    position: relative;
+}
+
+.intro-photo::before {
+    content: "";
+    position: absolute;
+    width: 270px;
+    height: 360px;
+    left: -18px;
+    top: 18px;
+    border: 1px solid #bba8c7;
+    border-radius: 140px 140px 20px 20px;
+}
+
+.intro-photo img {
+    position: relative;
+    width: 270px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 140px 140px 20px 20px;
+    display: block;
+}
+
+.intro-content {
+    flex: 1;
+}
+
+.hello,
+.margin-bottom:5px {
+    color: #9573aa;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #11011b;
+    white-space: nowrap;
+    font-family: 'NanumSquareRoundExtraBold', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.lead {
+    margin-bottom: 18px;
+    font-size: 21px;
+    color: #5f5664;
+}
+
+.intro-text {
+    max-width: 570px;
+    color: #777078;
+    font-size: 15px;
+}
+
+/* 프로젝트 */
+section {
+    margin-bottom: 110px;
+}
+
+h2 {
+    margin: 6px 0 35px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card {
+    min-height: 210px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #e5e0e7;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(60, 40, 70, 0.08);
+}
+
+.number {
+    color: #a88bb9;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.card h3 {
+    margin: 18px 0 10px;
+    color: #4e3d58;
+    font-size: 20px;
+}
+
+.card p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* 연락처 */
+#contact {
+    padding-top: 60px;
+    border-top: 1px solid #ded9d2;
+}
+
+fieldset {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e3dde5;
+    border-radius: 15px;
+}
+
+legend {
+    padding: 0 10px;
+    color: #76558f;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    background-color: #fafafa;
+    border: 1px solid #dedade;
+    border-radius: 7px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #76558f;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5e426f;
+}
+
+footer {
+    padding: 35px 0;
+    border-top: 1px solid #ded9d2;
+    color: #999;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* 휴대폰 */
+@media (max-width: 750px) {
+    body {
+        padding: 20px;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 45px;
+    }
+
+    .intro-photo img,
+    .intro-photo::before {
+        width: 230px;
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+}

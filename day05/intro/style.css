@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+  background-color: #f7f9fb;
+  color: #1f2e3a;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* 소개 영역 : 사진 왼쪽, 글 오른쪽 */
+.intro {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.profile {
+  width: 160px;
+  border-radius: 50%;
+}
+
+.lead {
+  color: #5f7280;
+}
+
+/* 카드와 NEW 배지 */
+.card {
+  position: relative;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d3dee6;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: #0b6fb8;
+  color: #ffffff;
+  font-size: 12px;
+}
