@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Display 속성 비교</title>
+    <style>
+      body {
+        font-family:
+          Arial,
+          sans-seri f;
+        margin: 20px;
+      }
+      .section {
+        margin-bottom: 30px;
+        /* margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 40px;
+        margin-left: 30px;
+        margin : 10px 20px 40px 30px; */
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      .box {
+        background-color: lightcoral;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+        box-sizing: border-box;
+      }
+      /* Block */
+      .block-container .box {
+        display: block;
+        width: 100px;
+        height: 100px;
+      }
+      /* Inline */
+      .inline-container .box {
+        display: inline;
+      }
+      /* Inline-Block */
+      .inline-block-container .box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+      /* Flex */
+      .flex-container {
+        display: flex;
+        justify-content: start;
+      }
+      .flex-container .box {
+        width: 100px;
+        height: 100px;
+      }
+      /* Grid */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        gap: 10px;
+      }
+      .grid-container .box {
+        width: 100px;
+        height: 100px;
+      }
+      /* None */
+      .none-container .box:nth-child(2) {
+        display: none;
+      }
+      .none-container .box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+      h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Display 속성 비교</h1>
+
+    <!-- Block -->
+    <div class="section">
+      <h2>Display: Block</h2>
+      <div class="block-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+      <p>
+        Block 요소는 새 줄에서 시작하며, 부모 컨테이너의 전체 너비를 차지합니다.
+      </p>
+    </div>
+
+    <!-- Inline -->
+    <div class="section">
+      <h2>Display: Inline</h2>
+      <div class="inline-container">
+        <span class="box">Box 1</span>
+        <span class="box">Box 2</span>
+        <span class="box">Box 3</span>
+      </div>
+      <p>
+        Inline 요소는 한 줄에 나란히 배치되며, width와 height 속성을 무시합니다.
+      </p>
+    </div>
+
+    <!-- Inline-Block -->
+    <div class="section">
+      <h2>Display: Inline-Block</h2>
+      <div class="inline-block-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+      <p>
+        Inline-Block 요소는 한 줄에 나란히 배치되며, width와 height 속성을
+        적용할 수 있습니다.
+      </p>
+    </div>
+
+    <!-- Flex -->
+    <div class="section">
+      <h2>Display: Flex</h2>
+      <div class="flex-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+      <p>
+        Flex 요소는 유연한 1차원 레이아웃을 제공하며, 자식 요소를 정렬/배치할 수
+        있습니다.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="section">
+      <h2>Display: Grid</h2>
+      <div class="grid-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+      <p>
+        Grid 요소는 2차원 레이아웃을 제공하며, 행과 열을 정밀하게 배치합니다.
+      </p>
+    </div>
+
+    <!-- None -->
+    <div class="section">
+      <h2>Display: None</h2>
+      <div class="none-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2 (Hidden)</div>
+        <div class="box">Box 3</div>
+      </div>
+      <p>
+        None은 요소를 화면에서 완전히 숨기며, 레이아웃 공간도 차지하지 않습니다.
+      </p>
+    </div>
+  </body>
+</html>

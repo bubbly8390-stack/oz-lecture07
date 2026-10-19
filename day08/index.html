@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>김코딩 — 소개</title>
+
+    <!-- Bootstrap 먼저, 내 CSS는 그 뒤에 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ── Navbar : 992px 아래에서 접힙니다 ── -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light border-bottom">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#">김코딩</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="메뉴 열기"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#intro">소개</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#works">작업</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">연락처</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ── 소개 : 사진 4칸 + 글 8칸 ── -->
+      <section id="intro" class="container my-5">
+        <h2 class="mb-4">소개</h2>
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-md-4">
+            <img
+              src="me.jpg"
+              alt="김코딩의 프로필 사진"
+              class="img-fluid rounded"
+              width="240"
+              height="240"
+            />
+          </div>
+          <div class="col-12 col-md-8">
+            <p class="lead">웹 개발을 배우고 있는 김코딩입니다.</p>
+            <p class="text-body-secondary">
+              1인 창업가 개발부트캠프 7기에서 HTML, CSS, Bootstrap을 배우고
+              있습니다. 직접 만든 것을 기록으로 남기는 일에 관심이 많습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 작업 : 1열 → 2열 → 3열 ── -->
+      <section id="works" class="container my-5">
+        <h2 class="mb-4">작업</h2>
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">개인 소개 페이지</h3>
+                <p class="card-text text-body-secondary">
+                  HTML과 CSS만으로 만든 첫 페이지입니다.
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">보러 가기</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">회원가입 폼</h3>
+                <p class="card-text text-body-secondary">
+                  입력 종류와 기본 검증을 익히며 만들었습니다.
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">보러 가기</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">반응형 카드 목록</h3>
+                <p class="card-text text-body-secondary">
+                  미디어 쿼리로 1열·2열·3열이 되게 만들었습니다.
+                </p>
+                <button
+                  class="btn btn-outline-primary btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#detail"
+                >
+                  자세히
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 연락처 : 넓은 화면에서 가운데 ── -->
+      <section id="contact" class="container my-5">
+        <h2 class="mb-4">연락처</h2>
+        <div class="row">
+          <div class="col-12 col-lg-6 mx-auto">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">이름</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">이메일</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+                <div class="form-text">답장 받을 주소를 적어주세요.</div>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">하고 싶은 말</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">보내기</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-light border-top py-4">
+      <div class="container text-center text-body-secondary">
+        <small>© 2026 김코딩 · 1인 창업가 개발부트캠프 7기</small>
+      </div>
+    </footer>
+
+    <!-- ── Modal : 버튼의 target과 id가 짝입니다 ── -->
+    <div class="modal fade" id="detail" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">반응형 카드 목록</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="닫기"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-0">
+              CSS Grid와 미디어 쿼리로 만들었습니다. 768px에서 2열, 1024px에서
+              3열이 됩니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS는 body 끝에 : Navbar 접힘과 Modal에 필요합니다 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,480 @@
+/* ========================================
+   운명록 전체 기본 설정
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Serif KR", "Malgun Gothic", serif;
+
+  background-color: #160f1d;
+
+  color: #fff8e7;
+
+  overflow-x: hidden;
+}
+
+
+/* ========================================
+   운명록 첫 화면
+======================================== */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  /* 자주색 + 배경사진 그라데이션 */
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(27, 15, 35, 0.82) 0%,
+      rgba(43, 24, 45, 0.60) 35%,
+      rgba(46, 27, 42, 0.25) 65%,
+      rgba(25, 15, 28, 0.15) 100%
+    ),
+    url("unmyeongrok-bg.png");
+
+  background-size: 105%;
+
+  background-position: 50% 50%;
+
+  background-repeat: no-repeat;
+
+  display: flex;
+
+  justify-content: flex-start;
+
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  /* 아주 천천히 부드럽게 움직임 */
+  animation: backgroundMove 25s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   화면 전체 은은한 어두운 효과
+======================================== */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10, 5, 15, 0.12),
+      rgba(20, 10, 25, 0.05),
+      rgba(10, 5, 15, 0.35)
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   책 주변 빛 효과
+======================================== */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  right: 5%;
+  bottom: -10%;
+
+  width: 850px;
+  height: 850px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 230, 160, 0.30) 0%,
+      rgba(255, 190, 90, 0.15) 30%,
+      rgba(190, 115, 170, 0.07) 50%,
+      transparent 72%
+    );
+
+  filter: blur(10px);
+
+  animation: bookLight 6s ease-in-out infinite alternate;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   글씨 영역
+======================================== */
+
+.content {
+  position: relative;
+
+  z-index: 3;
+
+  width: 50%;
+
+  max-width: 720px;
+
+  margin-left: 5%;
+
+  padding: 50px;
+
+  animation: contentAppear 2.5s ease;
+}
+
+
+/* ========================================
+   영어 작은 제목
+======================================== */
+
+.small-title {
+  color: #e9c989;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  letter-spacing: 7px;
+
+  margin-bottom: 18px;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.9),
+    0 0 12px rgba(235, 190, 115, 0.35);
+}
+
+
+/* ========================================
+   운명록 메인 제목
+======================================== */
+
+h1 {
+  color: #fff4cf;
+
+  font-size: 95px;
+
+  font-weight: bold;
+
+  letter-spacing: 18px;
+
+  margin-bottom: 5px;
+
+  text-shadow:
+    0 0 8px rgba(255, 238, 190, 0.95),
+    0 0 18px rgba(255, 207, 125, 0.75),
+    0 0 40px rgba(210, 140, 230, 0.45);
+
+  /* 제목도 천천히 빛남 */
+  animation: titleGlow 5s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   한자 제목
+======================================== */
+
+.hanja {
+  color: #e4c47e;
+
+  font-size: 30px;
+
+  font-weight: bold;
+
+  letter-spacing: 13px;
+
+  margin-bottom: 38px;
+
+  text-shadow:
+    0 0 10px rgba(255, 211, 130, 0.65),
+    0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ========================================
+   설명 문구
+======================================== */
+
+.message {
+  color: #fff5df;
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  line-height: 2;
+
+  margin-bottom: 42px;
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 1),
+    0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ========================================
+   운명록 펼치기 버튼
+======================================== */
+
+.start-button {
+  display: inline-block;
+
+  padding: 17px 48px;
+
+  border: 1px solid rgba(238, 198, 115, 0.9);
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(75, 43, 80, 0.88),
+      rgba(43, 25, 55, 0.92)
+    );
+
+  color: #fff1c9;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.40),
+    0 0 15px rgba(224, 178, 95, 0.18);
+
+  transition: 0.5s;
+}
+
+
+/* ========================================
+   버튼에 마우스를 올렸을 때
+======================================== */
+
+.start-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #efd178,
+      #c99a4c
+    );
+
+  color: #2d1934;
+
+  border-color: #ffe5a0;
+
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 0 15px rgba(255, 225, 155, 0.8),
+    0 0 35px rgba(221, 170, 90, 0.55),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ========================================
+   배경사진 아주 부드럽게 움직이기
+======================================== */
+
+@keyframes backgroundMove {
+
+  0% {
+    background-size: 105%;
+
+    background-position: 50% 50%;
+  }
+
+  50% {
+    background-size: 107%;
+
+    background-position: 50.5% 49.5%;
+  }
+
+  100% {
+    background-size: 109%;
+
+    background-position: 51% 49%;
+  }
+
+}
+
+
+/* ========================================
+   책의 빛이 천천히 퍼지는 효과
+======================================== */
+
+@keyframes bookLight {
+
+  0% {
+    opacity: 0.55;
+
+    transform: scale(0.94);
+  }
+
+  100% {
+    opacity: 0.9;
+
+    transform: scale(1.06);
+  }
+
+}
+
+
+/* ========================================
+   운명록 글씨 빛 효과
+======================================== */
+
+@keyframes titleGlow {
+
+  0% {
+    text-shadow:
+      0 0 7px rgba(255, 238, 190, 0.70),
+      0 0 16px rgba(255, 207, 125, 0.45),
+      0 0 30px rgba(190, 120, 220, 0.25);
+  }
+
+  100% {
+    text-shadow:
+      0 0 11px rgba(255, 245, 210, 0.95),
+      0 0 24px rgba(255, 205, 120, 0.75),
+      0 0 45px rgba(210, 140, 230, 0.45);
+  }
+
+}
+
+
+/* ========================================
+   처음 화면 글씨 등장
+======================================== */
+
+@keyframes contentAppear {
+
+  0% {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ========================================
+   태블릿 / 휴대폰
+======================================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100vh;
+
+    justify-content: center;
+
+    background-size: cover;
+
+    background-position: 65% center;
+
+    /* 휴대폰에서는 배경 흔들림 제거 */
+    animation: none;
+  }
+
+
+  .content {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin-left: 0;
+
+    padding: 30px 22px;
+  }
+
+
+  .small-title {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+  }
+
+
+  h1 {
+    font-size: 55px;
+
+    letter-spacing: 10px;
+  }
+
+
+  .hanja {
+    font-size: 21px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .message {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+  }
+
+
+  .start-button {
+    padding: 14px 32px;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .hero::before {
+    width: 500px;
+    height: 500px;
+
+    right: -30%;
+
+    bottom: -5%;
+  }
+
+}

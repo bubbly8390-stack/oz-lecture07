@@ -1,0 +1,31 @@
+/* DAY08 — Bootstrap 위에 얹는 내 규칙
+   Bootstrap 링크보다 뒤에 연결해야 이깁니다 (Day4 캐스케이딩) */
+
+body {
+  color: #1f2e3a;
+}
+
+/* 글줄이 너무 길어지지 않게 — Day6 마무리에서 넣었던 규칙 */
+section p {
+  max-width: 65ch;
+}
+
+/* 카드에서 테두리를 빼고 그림자로 띄웁니다 */
+.card {
+  border: 0;
+  box-shadow: 0 2px 12px rgba(13, 33, 55, 0.07);
+}
+
+/* 소개 영역에만 옅은 배경 */
+#intro {
+  background-color: #f7f9fb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+}
+
+/* 키보드로 이동할 때 지금 어디인지 보이게 — Day6 마무리에서 넣었던 규칙 */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0b6fb8;
+  outline-offset: 2px;
+}
