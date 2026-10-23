@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY 15 — DOM 조작 기초</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- 01 · 02 — DOM, 요소 선택 -->
+    <h1 id="title">오즈 베이커리</h1>
+    <p class="desc">매일 아침 8시에 문을 엽니다</p>
+    <ul class="menu">
+      <li>소금빵</li>
+      <li class="new">크루아상</li>
+      <li class="new sold-out">바게트</li>
+    </ul>
+
+    <!-- 03 — 내용과 모양 바꾸기 -->
+    <p class="status">준비 중</p>
+    <p id="text-msg"></p>
+    <p id="html-msg"></p>
+    <p id="hello">Hello, <span style="display:none;">Javascript!</span></p>
+    <img id="sign" src="closed.svg" alt="준비 중">
+
+    <!-- 04 — 만들고 붙이고 지우기 -->
+    <button id="add-btn" type="button">메뉴 추가</button>
+    <ul class="bread-list"></ul>
+    <section id="card-list" class="card-list"></section>
+  </main>
+
+  <!-- 장표의 예제는 index.js에 따라 칩니다 -->
+  <script src="index.js"></script>
+</body>
+</html>

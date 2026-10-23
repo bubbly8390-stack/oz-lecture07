@@ -1,0 +1,100 @@
+/* DAY 15 — 장표 예제(index.html)와 실습 01 · 02가 함께 쓰는 스타일 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 32px 24px;
+  font-family: system-ui, sans-serif;
+  color: #1f2e3a;
+  background: #f0f4f8;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+/* 실습 01 — 가게 소개 */
+.status {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #d3dee6;
+  color: #5f7280;
+  font-weight: bold;
+}
+.status.open {
+  background: #dff3e4;
+  color: #1e7a3c;
+}
+.menu {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.menu li {
+  margin-bottom: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #ffffff;
+}
+.menu li.sold-out {
+  color: #9aa7b1;
+  text-decoration: line-through;
+}
+
+/* 실습 02 — 상품 카드 */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+.card {
+  padding: 16px;
+  border: 1px solid #d3dee6;
+  border-radius: 8px;
+  background: #ffffff;
+}
+.card h3 {
+  margin: 0 0 6px;
+}
+.card p {
+  margin: 0;
+  color: #5f7280;
+}
+.card.sold-out {
+  opacity: 0.55;
+}
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #c4553c;
+  color: #ffffff;
+  font-size: 12px;
+}
+button {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #0b6fb8;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 장표 예제 — index.html (32장) */
+.active {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+}
+
